@@ -1,3 +1,4 @@
+import {enrichUserPromptWithContext} from "./utils.js";
 import express from 'express'
 import * as path from 'path'
 import bodyParser from 'body-parser'
@@ -17,9 +18,37 @@ app.use(bodyParser.json())
 app.use(express.static(path.join(process.cwd(), 'client')))
 
 // create http post endpoint that accepts user input
-app.post('/api/hello', async (req, res) => {
-    const { name } = req.body;
-    res.json({ data: `Hello, ${name}` });
+app.post('/api/openai', async (req, res) => {
+    const { question } = req.body;
+
+    // send a request to the OpenAI API with the user's prompt
+    // using the node-fetch library
+    const response = await fetch('https://api.openai.com/v1/completions', {
+        method: 'POST',
+        headers: {
+            // notice how we're using process.env here
+            // this is using the environment variable from the .env file
+            'Authorization': `Bearer ${process.env.OPENAI_API_KEY}`,
+            'Content-Type': 'application/json',
+        },
+        // construct the request payload 
+        // to be sent to the OpenAI API,
+        // passing in an 'enriched' version
+        // of the user's prompt
+        body: JSON.stringify({
+            model: 'text-davinci-003',
+            prompt: enrichUserPromptWithContext(question),
+            // the maximum number of tokens/words the bot should return
+            // in response to a given prompt
+            max_tokens: 100,
+        }),
+    });
+
+    // parse the response from OpenAI as json
+    const data = await response.json();
+
+    // return the json response to the client
+    res.json({ data: data.choices[0].text });
 });
 
 // set the port to listen on

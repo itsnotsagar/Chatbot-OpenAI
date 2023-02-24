@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="title" content="Project Template">
+    <meta name="description" content="How to use the Project Template">
+    <title>Project Template</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+<div id="root" class="flex flex-col min-h-screen p-16">
+
+    <!-- code goes below -->
+    <main class="grow flex flex-col items-center justify-center">
+        <h1 class="text-center text-2xl mt-5 font-bold my-4">Project Template</h1>
+        <section>
+            <form id="name-form" class="flex space-x-2">
+                <div>
+                    <label for="name" class="sr-only">Your name</label>
+                    <input id="name" type="text" name="name" class="block w-full rounded-md border border-gray-300 px-2.5 py-1.5 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm" placeholder="What's your name?">
+                </div>
+                <button type="submit" class="inline-flex items-center rounded border border-gray-300 bg-white px-2.5 py-1.5 text-xs font-medium text-gray-700 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">Submit</button>
+            </form>
+        </section>
+    </main>
+    <!-- code goes above-->
+
+    <script src="app/index.js" type="module"></script>
+</div>
+</body>
+
+</html>

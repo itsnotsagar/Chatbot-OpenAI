@@ -1,4 +1,4 @@
-import {enrichUserPromptWithContext} from "./utils.js";
+//import {enrichUserPromptWithContext} from "./utils.js";
 import express from 'express'
 import * as path from 'path'
 import bodyParser from 'body-parser'
@@ -37,7 +37,7 @@ app.post('/api/openai', async (req, res) => {
         // of the user's prompt
         body: JSON.stringify({
             model: 'text-davinci-003',
-            prompt: enrichUserPromptWithContext(question),
+            prompt: `${question}`,
             // the maximum number of tokens/words the bot should return
             // in response to a given prompt
             max_tokens: 100,

@@ -33,3 +33,11 @@ npm run dev
 ```
 6. Open project in browser.<br>
 From a web browser, open `localhost:3000`.
+
+# Screenshots
+<p align="center">
+<img width="1552" alt="Screenshot 2023-03-06 at 5 32 16 PM" src="https://user-images.githubusercontent.com/56265949/223105597-eebda6c1-de37-486c-a4e2-aeee25246c0d.png">
+<img width="1552" alt="Screenshot 2023-03-06 at 5 32 45 PM" src="https://user-images.githubusercontent.com/56265949/223105633-de96c647-ffbe-4fb2-ac7e-df34d642bfec.png">
+<img width="1552" alt="Screenshot 2023-03-06 at 5 33 06 PM" src="https://user-images.githubusercontent.com/56265949/223105659-3ad0049b-3107-4af5-9440-4e236840d406.png">
+<img width="1552" alt="Screenshot 2023-03-06 at 5 33 42 PM" src="https://user-images.githubusercontent.com/56265949/223105747-d5b216af-359f-4faf-ae06-f0c45c3985c6.png">
+</p>
